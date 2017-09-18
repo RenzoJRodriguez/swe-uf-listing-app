@@ -25,28 +25,31 @@
       <div ui-view></div>
     </div>
     <!-- Dependencies -->
-    <script src="/public/lib/jquery/dist/jquery.min.js"></script>
-    <script src="/public/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="/public/lib/jquery/dist/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- <script src="/public/lib/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!-- <script src="/public/lib/angular/angular.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="/public/lib/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/public/lib/angular-bootstrap/ui-bootstrap.js"></script>
 
-    <!--
-      The bower.JSON file installed the lastest version of lodash which is
-      Version 4
+    <!-- <script src="/public/lib/angular-ui-router/release/angular-ui-router.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
 
-      In version 4 lodash replaced _.contains w/ _.includes
+    <!-- <script src="/public/lib/angular-bootstrap/ui-bootstrap.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
 
-      This resulted in errors, so I had to install the latest 3.X version
-      which was 3.10.1
+    <!-- <script src="/public/lib/lodash/lodash.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 
-      bower install lodash@3.10.1
-    -->
-    <script src="/public/lib/lodash/lodash.min.js"></script>
-    <script src="/public/lib/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <!-- <script src="/public/lib/angular-simple-logger/dist/angular-simple-logger.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-simple-logger/0.1.7/angular-simple-logger.min.js"></script>
+
+    <!-- <script src="/public/lib/angular-google-maps/dist/angular-google-maps.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.4.1/angular-google-maps.min.js"></script>
+
     <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
-    <script src="/public/lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
 
     <!-- Application Source Code -->
     <script src="app/app.js"></script>
