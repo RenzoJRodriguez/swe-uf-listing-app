@@ -1,0 +1,67 @@
+Issue 0: heroku login
+
+    Steps to fixing:
+        1. Used command prompt		[It seems that the heroku login command is incompatible	w/ git bash; had to resort to command prompt]
+
+    Relevant links:
+        https://stackoverflow.com/questions/34792563/login-is-currently-incompatible-with-git-bash-cygwin/34797965
+
+Issue 1: git push heroku master
+
+    Steps to fixing:
+        1. git push heroku Assignment5:master				[Changed syntax; syntax is more explicit since my completed app is on a branch other than master]
+
+    Relevant Links:
+        https://devcenter.heroku.com/articles/git#deploying-code
+
+Issue 2: heroku ps:scale web=1
+
+    Steps to fixing:
+        1. heroku buildpacks						            [checked to see which buildpacks I had]
+        2. heroku buildpacks:clear					            [cleared buildpacks]
+        3. heroku buildpacks						            [checked to see if previous step was successful]
+        4. heroku buildpacks:add --index heroku/nodejs			[add heroku's nodejs buildpack]
+        5. git commit --allow-empty -m "Adjusted buildpackage"	[committed change]
+        6. git push heroku Assignment5:master				    [pushed change to heroku]
+
+    Relevant Links:
+        https://kb.heroku.com/why-am-i-seeing-couldn-t-find-that-process-type-when-trying-to-scale-dynos
+
+Issue 3: heroku open
+
+    "./config" error --> result of gitignore --> app crashed as a result
+    Pushed config files to heroku into a new seperate.
+
+    At this point there were some issues with my branches and heroku so I made completely separate repo on github
+    with the appropriate code and hosted that instead.
+
+    Steps to fix:
+        1. heroku logs						                                          [checked to see cause of error]
+        2. # server/config/config.js				                                [modified .gitignore]
+        3. port: process.env.PORT || 8080                                   [modified config.js]
+        4. git add .					                                              [staged changes]
+        5. git commit --allow-empty -m "removed config file from .gitignore	[commited changes]
+        6. git push heroku master			                                      [pushed change to heroku]
+        7. heroku ps:scale web=1                                            [deployed application]
+        8. heroku open                                                      [Opened application]
+
+Issue 4: Angular is not defined & several unexpected token errors & view did not have styling
+
+    Steps to fix:
+        1. Changed all src attributes for the scripts to their CDN versions rather than the locally installed ones
+        2. Changed href attributes for bootstrap css to its CDN version
+        3. Pushed changes to heroku and redeployed
+
+Issue 5: Missing Google Maps API Key
+
+    Steps to fix:
+        1. Got an access key from https://developers.google.com/maps/documentation/javascript/get-api-key
+        2. Put the access key into the config file
+        3. Changed the google maps API key src attribute to contain the key
+        4. Pushed changes to heroku and redeployed
+
+Issue 6: Could not retrieve listings data
+
+    Steps to fix:
+        1. Changed urls in factory file from localhost:8080 to the heroku url
+        2. Pushed changes to heroku and redeployed
